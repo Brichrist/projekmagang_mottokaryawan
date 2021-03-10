@@ -40,8 +40,7 @@
         {{-- <img class="one" src="ocean.jpg" width="300" height="300"> --}}
         <span class="d-none d-lg-block"><img id="previewImage"class="two img-profile rounded-circle mx-auto mb-2" src="{{url('foto/'.$karyawan->foto)}}" width="100px" height="100px" /></span>
         <label for="formFile" class="form-label">Ganti Foto </label>
-        <input id="new_file"class="form-control ">
-        {{-- @error('foto') is-invalid @enderror" type="file" name="foto" value="{{$karyawan->foto}} --}}
+        <input id="new_file"class="form-control @error('foto') is-invalid @enderror" type="file" name="foto" value="{{$karyawan->foto}}">
     </div>
     <div class="mt-4 mr-5 " style="float: right;">
         <button  class="btn btn-outline-primary">update</button>
