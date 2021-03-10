@@ -14,7 +14,7 @@ class TblKaryawan extends Migration
     public function up()
     {
         Schema::create('tbl_karyawan', function (Blueprint $table) {
-            $table->id('id')->primary()->autoIncrement();
+            $table->id('id')->autoIncrement();
             $table->string('name_depan',255);
             $table->string('nama_belakang',255);
             $table->string('tag_line',255);
