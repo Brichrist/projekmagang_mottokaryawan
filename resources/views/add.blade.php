@@ -38,8 +38,8 @@
     </div>
     <div class="mt-1 ml-4 px-4 col-4">
         <label for="formFile" class="form-label">Foto </label>
-        <input class="form-control ">
-        {{-- @error('foto') is-invalid @enderror" type="file" name="foto" value="{{old('foto')}} --}}
+        <input class="form-control" type="file" name="foto">
+        {{-- @error('foto') is-invalid @enderror"  value="{{old('foto')}} --}}
     </div>
     <div class="mt-4 mr-5 " style="float: right;">
         <button  class="btn btn-outline-primary">Add</button>
