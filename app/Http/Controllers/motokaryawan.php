@@ -29,7 +29,7 @@ class motokaryawan extends Controller
             'nama_belakang' => 'required',
             'tag_line' => 'required',
             'description' => 'required',
-            'foto' => 'required | mimes:jpg,jpeg',
+            'foto' => 'mimes:jpg,jpeg',
         ]);
         $foto = Request()->foto;
         $namafoto= Request()->nama_depan.'.'. $foto->extension();
