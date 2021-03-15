@@ -149,6 +149,9 @@ class motokaryawan extends Controller
         $req->session()->put('data',$data['name']); 
         echo session('data');
     }
+    public function config(){
+        dd(config('app.name2'));
+    }
 
 
 

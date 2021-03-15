@@ -14,6 +14,8 @@ Route::get('/content', function () {
 Route::get('/', function () {
     return view('master.contentmaster');
 });
+// Route::get('/', [motokaryawan::class, 'config']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
