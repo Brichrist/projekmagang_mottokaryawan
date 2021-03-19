@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Validation\Rule;
+use App\Http\Requests\form_request_validation;
+use App\Http\Requests\form_request_validation_profile;
 
 use Illuminate\Http\Request;
 use App\Models\kontenmodel;
@@ -23,14 +25,17 @@ class motokaryawan extends Controller
         
          return view('add');   
     }
-    public function insert(){
-        Request()->validate([
-            'nama_depan' => 'required',
-            'nama_belakang' => 'required',
-            'tag_line' => 'required',
-            'description' => 'required',
-            'foto' => 'mimes:jpg,jpeg',
-        ]);
+    public function insert(form_request_validation $request){
+
+        $validated = $request->validated();
+
+        // Request()->validate([
+        //     'nama_depan' => 'required',
+        //     'nama_belakang' => 'required',
+        //     'tag_line' => 'required',
+        //     'description' => 'required',
+        //     'foto' => 'mimes:jpg,jpeg',
+        // ]);
         $foto = Request()->foto;
         $namafoto= Request()->nama_depan.'.'. $foto->extension();
         $foto->move(public_path('foto'),$namafoto);
@@ -61,14 +66,15 @@ class motokaryawan extends Controller
 
         return view('trueedit',compact('karyawan'));
     }
-    public function change($id){
-        request()->validate([
-            'nama_depan' => 'required',
-            'nama_belakang' => 'required',
-            'tag_line' => 'required',
-            'description' => 'required',
-            'foto' => 'mimes:jpg,jpeg',
-        ]);
+    public function change($id,form_request_validation $request){
+        $validated = $request->validated();
+        // request()->validate([
+        //     'nama_depan' => 'required',
+        //     'nama_belakang' => 'required',
+        //     'tag_line' => 'required',
+        //     'description' => 'required',
+        //     'foto' => 'mimes:jpg,jpeg',
+        // ]);
         if (Request()->foto<>"") {
             $foto = Request()->foto;
             $namafoto= Request()->nama_depan.'.'. $foto->extension();
@@ -114,17 +120,17 @@ class motokaryawan extends Controller
  
         return redirect()->route('kontenmaster');
     }
-    public function changeprofile(){
+    public function changeprofile(form_request_validation_profile $request){
 
         $id=Auth::id();
-
-        request()->validate([
-            'name' => 'required',
-            'email' => ['required ',Rule::unique('users')->ignore($id)],
-            'tanggal_lahir' => 'required',
-            'alamat' => 'required',
-            'level' => 'required',
-        ]);
+        $validated = $request->validated();
+        // request()->validate([
+        //     'name' => 'required',
+        //     'email' => ['required ',Rule::unique('users')->ignore($id)],
+        //     'tanggal_lahir' => 'required',
+        //     'alamat' => 'required',
+        //     'level' => 'required',
+        // ]);
             $file = [
                 'name' => Request()->name,
                 'email' => Request()->email,
@@ -146,8 +152,10 @@ class motokaryawan extends Controller
     }
     public function sesi(request $req){
         $data=$req->input();
-        $req->session()->put('data',$data['name']); 
+        $req->session()->put('data',$data['level']); 
         echo session('data');
+        echo getdate1();
+        return redirect()->route('home');
     }
     public function config(){
         dd(config('app.name2'));
