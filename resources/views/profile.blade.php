@@ -54,7 +54,7 @@
         <label for="inputPassword6" class="col-form-label">level</label>
     </div>
     <div class="col-auto px-le mt-5">
-        <input type="text" name="level" value="{{auth()->user()->level}}" class="form-control @error('level') is-invalid @enderror"  >
+        <input type="text" name="level" value="{{auth()->user()->level}}" class="form-control @error('level') is-invalid @enderror"  readonly>
     </div>
     </div>
     

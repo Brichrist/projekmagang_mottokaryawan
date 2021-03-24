@@ -8,6 +8,7 @@ $(".test").click(function(){
 
 
 $('#new_file').change(function(){
+    document.getElementById("previewImage").classList.remove("invisible");
     var file = this.files[0];
     if(file.type != "image/png" && file.type != "image/jpeg" && file.type != "image/gif")
     {
@@ -20,3 +21,5 @@ $('#new_file').change(function(){
     }
     reader.readAsDataURL(file);
 });
+
+
