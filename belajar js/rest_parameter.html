@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(...data){
+            let total=0
+            for(let arr of data){
+                total += arr
+            }
+            return total
+        }
+        document.writeln(sum(1,2,3,4,5,6,7)) 
+        //spread syntax
+        sum1=[1,23,4,5]
+        document.writeln(`<p>${sum(...sum1)}</p>`) 
+    </script>
+</body>
+</html>

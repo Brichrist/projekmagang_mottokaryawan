@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hai() {
+            document.writeln(`hai oo`)
+        }
+        let a=100
+        function hai1(inte){
+            document.writeln(`${inte}`)
+        }
+        function hai2(inte2) {
+            let say=inte2+"brian"
+            return say
+        }
+        hai1(a)
+        hai1("brian")
+        hai()
+        hai()
+        let p=hai2("ch")
+        document.writeln(p)
+
+
+
+        function value(val) {
+            let rslt=val<80?"kurang baik":"baik"
+            return rslt
+        }
+        text=value(100)
+        document.writeln(`<p>${text}</p>`)
+        let test
+        let aaa=test??"oi"
+        document.writeln(aaa)
+
+
+    </script>
+</body>
+</html>

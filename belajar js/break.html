@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let c=1
+        for(;;){
+            document.writeln(`perulangan ke-${c}`)
+            c++
+            if (c>5){
+                break
+            }
+        }
+        for(let b=1;b<10;b++){
+            if (b%2==0) {
+                continue
+            }
+            document.writeln(`perulangan ke-${b}`)
+
+        }
+        document.writeln("<br><br>")
+        let t=1
+        loopa:
+        for (;;) {
+            document.writeln(`${t}`)
+            let c=1
+            loopc:
+            for(;;){
+                document.writeln(`${c}`)
+                t++
+                c++
+                if(t==3){
+                    break loopc
+                }
+                if(c==10){
+                    break loopa
+                }
+            }
+            
+        }
+
+
+
+    </script>
+</body>
+</html>

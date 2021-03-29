@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function array(arr,f_value) {
+            for(let a in arr){
+                if (arr[a]==f_value){
+                    console.info(arr[a])
+                    return true
+                }
+            }
+            console.info("test")
+            return false
+        }
+        arr=["brian","christian","hanjaya","brian christian hanjaya"]
+        name=prompt("nama yang akan dicari")
+        let bool=array(arr,name)
+        document.writeln("brian")
+        document.writeln(bool)
+    </script>
+</body>
+</html>
