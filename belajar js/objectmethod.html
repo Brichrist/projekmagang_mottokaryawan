@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = {
+            nama:"brian3",
+            fungsi: function(value){
+                document.writeln(value)
+            },
+            fungsi2: (value)=>document.writeln(value),
+            fungsi3: function(){
+                document.writeln(this.nama)
+            },
+            // get fungsi4(){
+            //     document.writeln(`${this.nama}`)}
+        }
+        document.writeln(a.nama)
+        a.fungsi("brian1")
+        a.fungsi2("brian2")
+        a.fungsi3()
+        // a.fungsi4()
+        const b = {
+            firstname:"eko",
+            lastname:"oke",
+            get fullname(){
+            return `${this.firstname} ${this.secondname}`},
+            set fullname(value){
+                let array = value.split(" ")
+                this.firstname = array[0]
+                this.lastname = arra[1]
+            },
+        }
+
+        b.fullname= "brian christian"
+        console.table(person)
+    </script>
+</body>
+</html>

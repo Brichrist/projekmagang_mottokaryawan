@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr=["brian","christian","hanjaya","hoho","hehe","hihi"]
+        const obj={
+            o_nama1:"brian",
+            o_nama2:"christian",
+            o_nama3:"hanjaya",
+            o_nama4:{
+                o_nama5:"hoho",
+                o_nama6:"hehe",
+                o_nama7:"hihi"
+            }
+        }
+        let {o_nama1,o_nama2,o_nama3,o_nama4:{o_nama5, o_nama6, o_nama7}}=obj
+        const [nama1,nama2,nama3,...nama_lain]=arr
+        console.info(o_nama1)
+        console.info(o_nama2)
+        console.info(o_nama3)
+        console.info(o_nama5)
+
+        let obj1={
+            a:"brian",
+            b:"christian",
+            c:"hanjaya"
+        }
+        function view({a,b,c}){
+            document.writeln(a)
+            document.writeln(b)
+            document.writeln(c)
+        }
+        view(obj1)
+
+        function sum([a=10,b=20]){
+            return a+b
+        }
+        let arr1=[3,4]
+        console.info(sum([10,20]))
+        console.info(sum(arr1))
+        console.info(sum([,20]))
+    </script>
+</body>
+</html>

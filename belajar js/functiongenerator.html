@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* names(){
+            yield "brian"
+            yield "christian"
+            yield 1
+        }
+        for(const name of names()){
+            document.writeln(name)
+        }
+        //lazy
+        function* angka_ganjil(value){
+            for(let i=1;i<=value;i++){
+                if (i%2==1){
+                    console.info(`yield ${i}`)
+                    yield i
+                }
+            }
+        }
+        //eager
+        function* angka_ganjils(value){
+            let result=[]
+            for(let i=1;i<=value;i++){
+                if (i%2==1){
+                    console.info(`yield ${i}`)
+                    result.push(i)
+                }
+            }
+            console.info(`yield ${result}`)
+        }
+        for(const angka of angka_ganjil(100)){
+            console.info(angka)
+        }
+        for(const angka of angka_ganjils(100)){
+            console.info(angka)
+        }
+
+    </script>
+</body>
+</html>
