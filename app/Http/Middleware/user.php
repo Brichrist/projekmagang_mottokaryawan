@@ -22,6 +22,9 @@ class user
         if (auth()->user()->level == 1) {
             return $next($request);
         }
+        if (auth()->user()->level == 0) {
+            return $next($request);
+        }
         return redirect('/');
     }
 }

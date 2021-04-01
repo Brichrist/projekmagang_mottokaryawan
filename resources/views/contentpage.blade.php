@@ -6,7 +6,7 @@
 @endsection
 @section('konten')
 
-@if (auth()->user()->level == 1)
+@if (auth()->user()->level == 1or auth()->user()->level == 0)
   <div class="mt-4 mr-5 " style="float: right;">
     <button class="btn btn-light rounded-circle" data-toggle="modal" data-target="#delete"><input type="image" src="https://img.icons8.com/bubbles/50/000000/trash.png" /></button>
   </div>
@@ -22,6 +22,7 @@
             {{$karyawa->tag_line}}
         </div>
         <p class="lead mb-5">{{$karyawa->description}}</p>
+        <p class="lead mb-5">SKILLS :: {{$karyawa->skill}}</p>
       @endforeach 
         
         <div class="" style="float: right;"> 

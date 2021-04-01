@@ -5,7 +5,7 @@
 @endsection
 
 @section('konten')
-<form action="/change/{{$karyawan->id}}" method="post" enctype="multipart/form-data">
+<form action="/change/{{$karyawan->id}}/{{$karyawan->skill}}" id="contactsForm" method="post" enctype="multipart/form-data">
 @csrf
     <h1 class="mb-0">
         Tambah
@@ -42,6 +42,59 @@
         <label for="formFile" class="form-label">Ganti Foto </label>
         <input id="new_file"class="form-control @error('foto') is-invalid @enderror" type="file" name="foto" value="{{$karyawan->foto}}">
     </div>
+    <div class="mt-3 ml-5 mr-5">
+    <br>  
+         
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-5">
+            <table class="skill_item col" > 
+                <thead>
+                    <tr>
+                    <th>Skill</th>
+                    <th></th>
+                    </tr>
+                </thead>      
+                <tbody>
+                       <tr>
+                            @foreach ($skill as $item)
+                            <td><div class="L_item">{{$item}}</div></td>
+                            <td>
+                                <input type="button" value="Delete Row" onclick="SomeDeleteRowFunction(this);">
+                                {{-- <button  class="btn btn-outline-primary">delete</button> --}}
+                            </td>
+                       </tr>
+                    @endforeach
+                </tbody>
+            </table>
+          </div>
+          <div class="col-sm-3">
+            <select class="col" id="select">
+                @foreach ($skill_list as $item)
+                    <option value="{{$item->skill}}">{{$item->skill}}</option>
+                @endforeach
+            </select>  
+          </div>
+          <div class="col-sm-3">
+            <input type="button" value="add skill" onclick="SomeAddRowFunction();"> 
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="mt-4 mr-5 " style="float: right;">
         <button  class="btn btn-outline-primary">update</button>
     </div>

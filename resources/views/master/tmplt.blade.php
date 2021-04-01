@@ -42,8 +42,27 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
                     <li class="nav-item"><a class="nav-link" href="/content">content</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/add">add</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/update">update</a></li>
+                    @auth
+                        @if (auth()->user()->level == 0 or auth()->user()->level == 1)
+                            <li class="nav-item"><a class="nav-link" href="/add">add</a></li>
+                        @endif 
+                    @endauth
+                    @auth
+                        @if (auth()->user()->level == 0or auth()->user()->level == 1)
+                            <li class="nav-item"><a class="nav-link" href="/update">update</a></li>
+                        @endif 
+                    @endauth
+                    @auth
+                        @if (auth()->user()->level == 0)
+                            <li class="nav-item"><a class="nav-link" href="/editlevel">edit level</a></li>
+                        @endif 
+                    @endauth
+                    @auth
+                        @if (auth()->user()->level == 0)
+                            <li class="nav-item"><a class="nav-link" href="/addskill">add skill</a></li>
+                        @endif 
+                    @endauth
+                    
                 </ul>
             </div>
                 @auth

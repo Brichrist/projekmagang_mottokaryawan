@@ -9,6 +9,7 @@ use App\Http\Requests\form_request_validation_profile;
 use Illuminate\Http\Request;
 use App\Models\kontenmodel;
 use App\Models\profilemodel;
+use App\Models\skill;
 use Auth;
 use App\Models\User;
 
@@ -63,10 +64,14 @@ class motokaryawan extends Controller
     }
     public function update($id){
         $karyawan=kontenmodel::findOrFail($id);
-
-        return view('trueedit',compact('karyawan'));
+            foreach(explode(',',$karyawan->skill) as $row){
+            $skill[]=$row;
+            };
+            // dd($skill);
+            $skill_list=skill::get();
+        return view('trueedit')->with(compact('karyawan','skill','skill_list'));
     }
-    public function change($id,form_request_validation $request){
+    public function change($id,$skill,form_request_validation $request){
         $validated = $request->validated();
         // request()->validate([
         //     'nama_depan' => 'required',
@@ -86,6 +91,7 @@ class motokaryawan extends Controller
                 'tag_line' => Request()->tag_line,
                 'description' => Request()->description,
                 'foto' => $namafoto,
+                'skill' => $skill,
             ];
         }
         else {
@@ -94,6 +100,7 @@ class motokaryawan extends Controller
                 'nama_belakang' => Request()->nama_belakang,
                 'tag_line' => Request()->tag_line,
                 'description' => Request()->description,
+                'skill' => $skill,
             ];
         }
         
@@ -160,7 +167,58 @@ class motokaryawan extends Controller
     public function config(){
         dd(config('app.name2'));
     }
+    public function edit_level(){
 
+        $account=profilemodel::get();
+        return view('editlevel',compact("account"));
+    }
+    public function edit_level_all(){
+        $datas=profilemodel::select('id')->get();
+        
+        request()->validate([        
+        ]);
+
+            foreach ($datas as $data ) {   
+                // echo 'level'.$data->id;
+                // echo " ";
+                // echo Request()->{'level'.$data->id};
+                // echo '<br>';
+                profilemodel::where('id',$data->id )->update(['level' => Request()->{'level'.$data->id}]);  
+            };    
+    
+        $account=profilemodel::get();
+        return view('editlevel',compact("account"));
+    }
+    public function add_skill(){
+        $skills=skill::get();
+        return view('addskill',compact("skills"));
+    }
+    public function insert_skill(){
+
+        // request()->validate([
+            //     'nama_depan' => 'required',
+            //     'nama_belakang' => 'required',
+            //     'tag_line' => 'required',
+            //     'description' => 'required',
+            //     'foto' => 'mimes:jpg,jpeg',
+            // ]);
+
+            //     $foto = Request()->foto;
+            //     $namafoto= Request()->nama_depan.'.'. $foto->extension();
+            //     $foto->move(public_path('foto'),$namafoto);
+    
+        $this->validate(
+            $request, 
+            ['skill' => 'required'],
+            ['skill.required' => 'Harap isi terlebih dahulu']
+        );
+        request()->validate([
+            'skill'=>"required",
+        ]);
+        $skill=['skill'=>Request()->skill,];
+        skill::create($skill);
+        return redirect()->route("addskill");
+    }
 
 
 

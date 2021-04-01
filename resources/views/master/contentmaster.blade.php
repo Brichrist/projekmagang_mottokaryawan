@@ -17,7 +17,13 @@
         <p class="lead mb-5">> Deskripsikan karyawan di sini.....</p>
         <div class="" style="float: right;">
             {{-- <a href="/content/previous/{{$karyawan->id}}" class="btn btn-outline-danger btn-sm">previous</a> --}}
-            <a href="contentpage" class="btn btn-outline-danger btn-lg">next</a>
+            @auth
+                <a href="contentpage" class="btn btn-outline-danger btn-lg">next</a>  
+            @else
+                <a href="login" class="btn btn-outline-danger btn-lg">login first</a>                
+            @endauth
+            
+
         </div>
     </div>
 </section>
