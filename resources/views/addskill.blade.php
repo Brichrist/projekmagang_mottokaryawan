@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-auto px-4 mt-5">
                     <input type="text" name="skill" value="" class="form-control @error('skill') is-invalid @enderror" >
-                    @error('title')
+                    @error('skill')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>

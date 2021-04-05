@@ -33,4 +33,14 @@ class form_request_validation_profile extends FormRequest
             'level' => 'required',
         ];
     }
+    public function messages()
+    {
+        return [
+            'name.required' => 'A name is required',
+            'email.required' => 'A email is required',
+            'tanggal_lahir.required' => 'A date is required',
+            'alamat.required' => 'A address is required',
+            'level.required' => 'A level is required',
+        ];
+    }
 }

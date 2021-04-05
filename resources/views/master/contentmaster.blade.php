@@ -12,9 +12,9 @@
         </h1>
         <div class="subheading mb-3">
           <br>
-            > Tag Line karyawan di sini.....
+            > manager@gmail.com - admin@gmail.com - guest@gmail.com
         </div>
-        <p class="lead mb-5">> Deskripsikan karyawan di sini.....</p>
+        <p class="lead mb-5">> pass : 12345678</p>
         <div class="" style="float: right;">
             {{-- <a href="/content/previous/{{$karyawan->id}}" class="btn btn-outline-danger btn-sm">previous</a> --}}
             @auth

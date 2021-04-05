@@ -17,6 +17,9 @@
     </div>
     <div class="col-auto px-4 mt-5">
         <input type="text" name="nama_depan" value="{{$karyawan->nama_depan}}" class="form-control @error('nama_depan') is-invalid @enderror" >
+        @error('nama_depan')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     </div>
     <div class="row g-3 align-items-center">
@@ -25,22 +28,34 @@
     </div>
     <div class="px-1 mt-4">
         <input type="text" name="nama_belakang" value="{{$karyawan->nama_belakang}}" class="form-control @error('nama_belakang') is-invalid @enderror" >
+        @error('nama_belakang')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     </div>
 
     <div class="mt-3 ml-5 mr-5">
         <label for="exampleFormControlInput1" class="form-label">Tag Line</label>
-        <input type="text" value="{{$karyawan->tag_line}}" class="form-control @error('tag_line') is-invalid @enderror" name="tag_line" >
+        <input type="text" value="{{$karyawan->tag_line}}" name="tag_line" class="form-control @error('tag_line') is-invalid @enderror" >
+        @error('tag_line')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     <div class="mt-1 ml-5 mr-5">
         <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-        <input type="text" value="{{$karyawan->description}}" class="form-control @error('description') is-invalid @enderror" name="description" >
+        <input type="text" value="{{$karyawan->description}}" name="description" class="form-control @error('description') is-invalid @enderror"  >
+        @error('description')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     <div class="mt-1 ml-4 px-4 col-4">
         {{-- <img class="one" src="ocean.jpg" width="300" height="300"> --}}
         <span class="d-none d-lg-block"><img id="previewImage"class="two img-profile rounded-circle mx-auto mb-2" src="{{url('foto/'.$karyawan->foto)}}" width="100px" height="100px" /></span>
         <label for="formFile" class="form-label">Ganti Foto </label>
-        <input id="new_file"class="form-control @error('foto') is-invalid @enderror" type="file" name="foto" value="{{$karyawan->foto}}">
+        <input id="new_file"type="file" name="foto" value="{{$karyawan->foto}}" class="form-control @error('foto') is-invalid @enderror" >
+        @error('foto')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     <div class="mt-3 ml-5 mr-5">
     <br>  

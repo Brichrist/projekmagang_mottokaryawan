@@ -193,28 +193,11 @@ class motokaryawan extends Controller
         $skills=skill::get();
         return view('addskill',compact("skills"));
     }
-    public function insert_skill(){
+    public function insert_skill(request $req){
 
-        // request()->validate([
-            //     'nama_depan' => 'required',
-            //     'nama_belakang' => 'required',
-            //     'tag_line' => 'required',
-            //     'description' => 'required',
-            //     'foto' => 'mimes:jpg,jpeg',
-            // ]);
-
-            //     $foto = Request()->foto;
-            //     $namafoto= Request()->nama_depan.'.'. $foto->extension();
-            //     $foto->move(public_path('foto'),$namafoto);
-    
-        $this->validate(
-            $request, 
-            ['skill' => 'required'],
-            ['skill.required' => 'Harap isi terlebih dahulu']
-        );
-        request()->validate([
-            'skill'=>"required",
-        ]);
+        request()->validate(
+            ['skill' => 'required',]
+            ,['skill.required' => 'Harap isi terlebih dahulu']);
         $skill=['skill'=>Request()->skill,];
         skill::create($skill);
         return redirect()->route("addskill");

@@ -31,4 +31,14 @@ class form_request_validation extends FormRequest
             'foto' => 'mimes:jpg,jpeg',
         ];
     }
+    public function messages()
+    {
+        return [
+            'nama_depan.required' => 'harus terisi',
+            'nama_belakang.email.required' => 'harus terisi',
+            'tag_line.required' => 'harus terisi',
+            'description.required' => 'harus terisi',
+            'foto.mimes:jpg,jpeg' => 'format file yang diizinkan: jpg, jpeg',
+        ];
+    }
 }

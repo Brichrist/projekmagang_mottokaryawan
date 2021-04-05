@@ -17,6 +17,9 @@
     </div>
     <div class="col-auto px-4 mt-5">
         <input type="text" name="name" value="{{auth()->user()->name}}" class="form-control @error('name') is-invalid @enderror " >
+        @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     </div>
 
@@ -26,6 +29,9 @@
     </div>
     <div class="col-auto px-em mt-5">
         <input type="text" name="email" value="{{auth()->user()->email}}" class="form-control @error('email') is-invalid @enderror" >
+        @error('email')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     </div>
 
@@ -36,6 +42,9 @@
     </div>
     <div class="col-auto px-tgl mt-5">
         <input type="text" name="tanggal_lahir" value="{{auth()->user()->tanggal_lahir}}" class="form-control " >
+        @error('tanggal_lahir')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     </div>
 
@@ -46,6 +55,9 @@
     </div>
     <div class="col-auto px-al mt-5">
         <input type="text" name="alamat" value="{{auth()->user()->alamat}}" class="form-control " >
+        @error('alamat')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     </div>
 
@@ -54,7 +66,10 @@
         <label for="inputPassword6" class="col-form-label">level</label>
     </div>
     <div class="col-auto px-le mt-5">
-        <input type="text" name="level" value="{{auth()->user()->level}}" class="form-control @error('level') is-invalid @enderror"  readonly>
+        <input type="text" name="level" readonly value="{{auth()->user()->level}}" class="form-control @error('level') is-invalid @enderror">
+        @error('level')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     </div>
     
