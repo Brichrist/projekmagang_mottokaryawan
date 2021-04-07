@@ -76,11 +76,13 @@
                 <tbody>
                        <tr>
                             @foreach ($skill as $item)
-                            <td><div class="L_item">{{$item}}</div></td>
-                            <td>
-                                <input type="button" value="Delete Row" onclick="SomeDeleteRowFunction(this);">
-                                {{-- <button  class="btn btn-outline-primary">delete</button> --}}
-                            </td>
+                            @if ($item!=null)
+                                <td><div class="L_item">{{$item}}</div></td>
+                                <td>
+                                    <input type="button" value="Delete Row" onclick="SomeDeleteRowFunction(this);">
+                                    {{-- <button  class="btn btn-outline-primary">delete</button> --}}
+                                </td>
+                            @endif
                        </tr>
                     @endforeach
                 </tbody>

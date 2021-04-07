@@ -1,0 +1,67 @@
+/* styler jumbotron */
+.jumbotron{
+    background-image: url(../public/foto/slider1.jpg);
+    background-size: cover;
+    height:755px;
+    text-align: center;
+    margin-top: -120px;
+    margin-bottom: 0px;
+}
+.jumbotron .display-4{
+    margin-top: 230px;
+    color:white;
+}
+.jumbotron .lead{
+    color:white;
+}
+.jumbotron p{
+    color:white;
+}
+
+.jumbotron hr{
+    border-color: #f05f40;
+    width: 70px;
+    border-width: 3px;
+}
+
+.jumbotron .btn{
+    background-color:#f05f40 ;
+    border:none;
+    border-radius: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    /* margin-top: 20px; */
+}
+
+/* style slider */
+.carousel-item{
+    height: 635px;
+}
+.carousel img{
+    height:635px;
+}
+.carousel-item .display-4{
+    margin-top: -400px;
+}
+.carousel-item hr{
+    border-color: #f05f40;
+    width: 70px;
+    border-width: 3px;
+}
+.carousel-item .btn{
+    background-color:#f05f40 ;
+    border:none;
+    border-radius: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    /* margin-top: 20px; */
+}
+
+.carousel-item p.cstm_tag{
+    color:white ;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #f05f40; */
+}
+/* .carousel-item p{
+    color:#f05f40;
+} */
