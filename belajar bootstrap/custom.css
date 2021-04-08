@@ -1,3 +1,12 @@
+/* styler nav */
+.fa-user-circle {
+    color:#000000;
+}
+
+
+
+
+
 /* styler jumbotron */
 .jumbotron{
     background-image: url(../public/foto/slider1.jpg);
@@ -40,8 +49,16 @@
 .carousel img{
     height:635px;
 }
-.carousel-item .display-4{
+/* .carousel-item .display-4{
     margin-top: -400px;
+    /* -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #000000; 
+} */
+
+.carousel-item .display-4 .cstm_tag2{
+    margin-top: -400px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #ffffff;
 }
 .carousel-item hr{
     border-color: #f05f40;
@@ -57,11 +74,19 @@
     /* margin-top: 20px; */
 }
 
-.carousel-item p.cstm_tag{
-    color:white ;
-    /* -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #f05f40; */
-}
+/* .carousel-item p.cstm_tag{
+    color:#f05f40 ;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #f05f40; 
+} */
 /* .carousel-item p{
     color:#f05f40;
 } */
+.transbox {
+    margin: 30px auto;
+    background-color: #000000;
+    opacity: 0.7;
+    height: 365px;
+    width: 800px;
+    border-radius: 80px;
+  }
