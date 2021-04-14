@@ -1,0 +1,49 @@
+.sidenav {
+    height: 100%;
+    width: 260px;
+    position: fixed;
+    z-index: 0;
+    top: 65px;
+    left: 5%;
+    /* background-color: rgb(248, 248, 248); */
+    overflow-x: hidden;
+    background-image: url(../../public/toko-online/pink-pastel-background_53876-92975.jpg);
+    background-size: cover;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.fixed-top-navbar{
+    position: fixed;
+    height: 30px;
+    width: 947px;
+    z-index: 100;
+    top: 56px;
+    left: 336px;
+    /* background-color: rgb(0, 0, 0); */
+    overflow-x: hidden;
+    background-image: url(../../public/toko-online/Capture.JPG);
+    background-size: cover;
+}  
+
+.content-bg-mainbg1{
+    height: 100%;
+    width: 70%;
+    position: fixed;
+    z-index: -1;
+    top: 65px;
+    left: 25%;
+    /* background-color: rgb(248, 248, 248); */
+    overflow-x: hidden;
+    background-image: url(../../public/toko-online/pink-pastel-background_53876-92975.jpg);
+    background-size: cover;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.content-carousal-home{
+    background-image: url(../../public/toko-online/pink-pastel-background_53876-92975.jpg);
+    background-size: cover;
+    padding-top: 20px;
+    border-radius: 20px;
+}
