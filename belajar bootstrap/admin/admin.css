@@ -1,0 +1,18 @@
+.nav-link:hover{
+    background-color: grey;
+}
+
+.card-body-icon{
+    position: absolute;
+    top: 75px;
+    right: 25px;
+    opacity: 0.4;
+}
+
+.card-margin{
+    margin-right: -50px;
+}
+
+.icon-hover:hover{
+    background: rgb(192, 192, 192);
+}

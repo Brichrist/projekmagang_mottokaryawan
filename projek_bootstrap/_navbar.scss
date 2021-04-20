@@ -1,0 +1,36 @@
+.navbar{
+
+    background-color: rgb(255, 255, 255);
+    background-color: transparent;
+    .container{
+        padding: 5px;
+        padding-top: 15px;
+        .navbar-brand{
+            font-size: 1.5rem;
+        }
+        .navbar-nav{
+            margin-left: 50px;
+            .active{
+                font-weight: bold;
+                color: $text-color-default;
+            }
+        }
+        .nav-button-size{
+            padding: 3px 30px;
+            background-color: $text-color-default;
+        }
+    }
+    
+}
+
+.nav-link{
+    // color: #1678bf  !important;
+    font-size: 1.2rem;
+    font-family: $font-family-default;
+    margin-right: 30px;
+    
+    &:hover{
+        background-color: rgb(195, 251, 255);
+        border-radius: 20px;
+    }
+}

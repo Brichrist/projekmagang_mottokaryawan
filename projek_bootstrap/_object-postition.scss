@@ -1,0 +1,44 @@
+@mixin triangle-position ($top,$left,$right) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    right: $right;
+    z-index: -2;
+} 
+#ellipse{
+    position: absolute;
+    width: 640px;
+    height: 640px;
+    border-radius: 640px;
+    top: 412px;
+    z-index: -1 ;
+    top: 600px;
+    left: 50%;
+    transform: translate(-50%);
+
+    background: linear-gradient(148.53deg, #1678BF 6.97%, #D9E8EA 80.65%);
+}
+
+#triangle-1{
+    @include triangle-position(0px,auto,10%);
+}
+
+#triangle-2{
+    @include triangle-position(300px,0%,auto);
+}
+
+#triangle-3{
+    @include triangle-position(600px,auto,25%);
+}
+
+#triangle-4{
+    @include triangle-position(800px,0%,auto);
+}
+
+#triangle-5{
+    @include triangle-position(1300px,auto,0%);
+}
+
+#triangle-6{
+    @include triangle-position(2300px,0%,auto);
+}
