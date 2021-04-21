@@ -1,5 +1,7 @@
+// content1
+
 .jumbotron1{
-    margin-top: -50px;
+    margin-top: 100px;
  
 
     .display-3{
@@ -12,6 +14,81 @@
     }
     h4{
         font-weight: 400;
+    }
+}
+
+// content2
+
+// .jumbotron2
+
+// content3
+
+.bg-1{
+    z-index: -40;
+    position: static;
+    margin-top: 50px;
+    width: 100%;
+    height: 1100px;
+    background: linear-gradient(195.75deg, #1678BF 58.65%, #D9E8EA 131.71%);
+    border-radius: 0px 750px 0px 0px;
+    .display-5{
+        font-weight: bolder;
+    }
+    .font-text-light{
+        font-weight: 350;
+    }
+    .content{
+        margin-top: 150px;
+    }
+}
+
+// content4
+
+.parallax {
+    /* The image used */
+    background-image: url("FILE/bg-parallax.png");
+  
+    /* Set a specific height */
+    height: 100vh;
+    min-height: 600px;
+    // max-height: 2400px; 
+    position: relative;
+    // margin-top: auto;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .parallax-text{
+        padding-top: 50px;
+        color: #1678bf;
+        h1{
+            font-weight: bolder;
+        }
+    }
+    .center{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }
+  }
+
+// content5
+
+.Testimonial{
+    margin-top: auto;
+    margin-bottom: 200px;
+    .display-4{
+        color: #1678bf;
+        font-weight: bolder;  
+    }
+    .carousel-item{
+        width: 100%;
+        height: 500px;
+        background-color: transparent;
     }
 }
 
