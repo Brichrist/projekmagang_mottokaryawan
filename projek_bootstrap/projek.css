@@ -187,8 +187,41 @@
 
 .Testimonial .carousel-item {
   width: 100%;
-  height: 500px;
-  background-color: transparent;
+  height: 200px;
+}
+
+.Testimonial .carousel-indicators {
+  bottom: 0;
+}
+
+.Testimonial .carousel-indicators .active {
+  width: 30px;
+}
+
+.Testimonial .button-dark {
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.Testimonial .arrow-dark {
+  background-color: black;
+}
+
+.Testimonial h3 {
+  margin-left: -80px;
+  margin-bottom: 50px;
+}
+
+.Testimonial .carousel-control-next-icon {
+  margin-top: -100px;
+}
+
+.Testimonial footer {
+  background-color: #1678bf;
+  width: 100%;
+  height: 200px;
 }
 
 .bg {
