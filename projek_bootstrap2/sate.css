@@ -1,0 +1,323 @@
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h5 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h4 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h3 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.display-4 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-no-shadow {
+  -webkit-box-shadow: 0px  grey;
+          box-shadow: 0px  grey;
+  background-color: transparent;
+  -webkit-transition: background-color 0.35s linear, -webkit-box-shadow 0.35s linear;
+  transition: background-color 0.35s linear, -webkit-box-shadow 0.35s linear;
+  transition: box-shadow 0.35s linear, background-color 0.35s linear;
+  transition: box-shadow 0.35s linear, background-color 0.35s linear, -webkit-box-shadow 0.35s linear;
+}
+
+.nav-scroll {
+  -webkit-box-shadow: 0px 5px 10px #4d4d4d;
+          box-shadow: 0px 5px 10px #4d4d4d;
+  background-color: white;
+  -webkit-transition: background-color 0.35s linear, -webkit-box-shadow 0.35s linear;
+  transition: background-color 0.35s linear, -webkit-box-shadow 0.35s linear;
+  transition: box-shadow 0.35s linear, background-color 0.35s linear;
+  transition: box-shadow 0.35s linear, background-color 0.35s linear, -webkit-box-shadow 0.35s linear;
+}
+
+.navbar {
+  padding-bottom: 0px;
+}
+
+.navbar .nav-link {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #5a5a5a;
+  -webkit-transition: font 0.4s linear;
+  transition: font 0.4s linear;
+}
+
+.navbar .nav-link:hover {
+  color: #242424;
+}
+
+.navbar .nav-link-scroll {
+  font-weight: 700;
+  margin-right: 10px;
+  font-size: 0.8rem;
+  color: #5a5a5a;
+  text-decoration: none;
+  -webkit-transition: font 0.4s linear;
+  transition: font 0.4s linear;
+}
+
+.navbar .nav-link-scroll:hover {
+  color: #242424;
+}
+
+.navbar .active {
+  color: black;
+}
+
+.navbar .nav-item {
+  margin-right: 10px;
+}
+
+.navbar .logo {
+  width: 200px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-transition: width 0.4s linear,height 0.4s linear;
+  transition: width 0.4s linear,height 0.4s linear;
+}
+
+.navbar .logo-scroll {
+  width: 120px;
+  height: 42px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-transition: width 0.4s linear,height 0.4s linear;
+  transition: width 0.4s linear,height 0.4s linear;
+}
+
+#home {
+  height: 120vh;
+  background-color: #ffb008;
+}
+
+#home #sobek {
+  position: absolute;
+  top: -600px;
+  left: -250px;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  width: 80%;
+  height: 200%;
+}
+
+#home .container {
+  padding-top: 200px;
+  margin-left: 150px;
+  margin-right: 100px;
+}
+
+#home h1 {
+  color: #003102;
+  font-weight: bolder;
+  margin-left: 60px;
+}
+
+#home hr {
+  margin: 0px;
+  width: 500px;
+}
+
+#home h5 {
+  color: #003102;
+  font-weight: bolder;
+}
+
+#home h6 {
+  color: #003102;
+}
+
+#home h6 .phone-absolute {
+  position: relative;
+  top: 15px;
+}
+
+#home h6 .phone-hide {
+  opacity: 0;
+}
+
+#home p {
+  color: #003102;
+}
+
+#home .btn-red {
+  background-color: #8c1211;
+  margin: 20px 0px 30px 0px;
+}
+
+#home .swiper-container {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+}
+
+#home .swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+#home .circle1 {
+  position: absolute;
+  left: 75%;
+  -webkit-transform: translate(-50%, -6%);
+          transform: translate(-50%, -6%);
+  margin-left: -9px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 20px black;
+          box-shadow: 0px 0px 20px black;
+  width: 400px;
+  height: 400px;
+  opacity: 0.5;
+}
+
+#home .circle2 {
+  position: absolute;
+  left: 75%;
+  opacity: 0.5;
+  -webkit-transform: translate(-50%, -11%);
+          transform: translate(-50%, -11%);
+  margin-left: -10px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 20px black;
+          box-shadow: 0px 0px 20px black;
+  width: 450px;
+  height: 450px;
+}
+
+#home .circle3 {
+  position: absolute;
+  left: 75%;
+  opacity: 0.5;
+  -webkit-transform: translate(-50%, -15%);
+          transform: translate(-50%, -15%);
+  margin-left: -10px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 20px black;
+          box-shadow: 0px 0px 20px black;
+  width: 500px;
+  height: 500px;
+}
+
+#product {
+  background-image: url(./asset/pine-wood-texture.jpg);
+  background-size: cover;
+}
+
+#product .title {
+  width: 15%;
+  border: 2px solid black;
+  margin: auto;
+}
+
+#product .card-body {
+  height: 180px;
+}
+
+#product .card-body h6 {
+  text-align: center;
+  margin-top: -8px;
+}
+
+#product .card-body hr {
+  width: 100%;
+  border: 1px solid black;
+}
+
+#product .card-body p {
+  font-size: 0.8rem;
+}
+
+#product .card {
+  margin-bottom: 40px;
+  width: 70%;
+}
+
+#event {
+  background-color: #003102;
+  height: 100vh;
+  padding: 100px;
+  width: auto;
+}
+
+#event .text-content {
+  position: relative;
+}
+
+#event .text-content h1 {
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fcf3c5;
+  position: absolute;
+}
+
+#event .text-content span {
+  color: #ffb008;
+}
+
+#event .img-content {
+  color: #fcf3c5;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-left: 130px;
+  position: relative;
+}
+
+#event .img-content .fa-truck {
+  position: absolute;
+  margin: auto;
+}
+
+#event .img-content .fa-users {
+  position: absolute;
+  margin: auto;
+}
+
+#event .img-content .sale {
+  position: absolute;
+  margin: auto;
+  font-size: 50px;
+  padding: 100px 30px;
+  border-radius: 50%;
+  border: 30px solid #fcf3c5;
+}
+
+#event .img-content .free {
+  position: absolute;
+  margin: auto;
+  font-size: 50px;
+  padding: 100px 70px;
+  border-radius: 50%;
+  border: 30px solid #fcf3c5;
+}
+
+#what-we-do pos
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 50px;
+  border: 10px;
+}
+/*# sourceMappingURL=sate.css.map */

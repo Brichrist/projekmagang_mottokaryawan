@@ -1,0 +1,202 @@
+
+#home{
+    height: 120vh ;
+    background-color: $color1;
+    // deleteafter
+    // border-style: solid;
+    // border-width: medium;
+    // deleteafter
+
+    #sobek{
+        position:absolute;
+        top: -600px;
+        left: -250px;
+        transform: rotate(-25deg);
+        width:80%;
+        height:200%;
+    }
+    .container{
+        padding-top: 200px;
+        margin-left: 150px;
+        margin-right: 100px;
+    }
+    h1{
+        color: $color3;
+        font-weight: bolder;
+        margin-left: 60px;
+    }
+    hr{
+        margin:0px;
+        width: 500px;
+    }
+    h5{
+        color: $color3;
+        font-weight: bolder;
+    }
+    h6{
+        color: $color3;
+        .phone-absolute{
+            position: relative;
+            top: 15px;
+        }
+        .phone-hide{
+            opacity: 0;
+        }
+    }
+    p{
+        color: $color3;
+    }
+
+    .btn-red{
+        background-color: $color4;
+        margin: 20px 0px 30px 0px;
+    }
+    .swiper-container {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+      }
+  
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+      }
+      .circle1{
+          position: absolute;
+          left:75%;
+          transform: translate(-50%, -6%);
+          margin-left: -9px;
+          border-radius: 50%;
+        //   border: 1px solid rgb(0, 0, 0);
+          box-shadow: 0px 0px 20px rgb(0, 0, 0);
+          width: 400px;
+          height: 400px;
+          opacity: 0.5;
+      }
+      .circle2{
+        position: absolute;
+        left:75%;
+        opacity: 0.5;
+        transform: translate(-50%, -11%);
+        margin-left: -10px;
+        border-radius: 50%;
+        // border: 1px solid rgb(0, 0, 0);
+        box-shadow: 0px 0px 20px rgb(0, 0, 0);
+        width: 450px;
+        height: 450px;
+      }
+      .circle3{
+        position: absolute;
+        left:75%;
+        opacity: 0.5;
+        transform: translate(-50%, -15%);
+        margin-left: -10px;
+        border-radius: 50%;
+        // border: 1px solid rgb(0, 0, 0);
+        box-shadow: 0px 0px 20px rgb(0, 0, 0);
+        width: 500px;
+        height: 500px;   
+    }
+
+}
+
+#product{
+    
+    background-image: url(./asset/pine-wood-texture.jpg);
+    background-size: cover;
+    .title{
+        width: 15%;
+        border: 2px solid black;
+        margin: auto;
+    }
+    .card-body {
+        height: 180px;
+
+        h6{
+            text-align: center;
+            margin-top: -8px;
+        }
+    
+    
+        hr{
+            width: 100%;
+            border: 1px solid black;
+            // margin: auto;
+        }
+        p{
+            font-size: 0.8rem;
+        }
+        
+    }
+    .card{
+        margin-bottom: 40px;
+        width: 70%;
+    }
+
+
+}
+
+#event{
+    background-color: $color3;
+    height: 100vh;
+    padding: 100px;
+    width: auto;
+    
+    .text-content{
+        position: relative;
+        h1{
+            font-size: 50px;
+            font-family: 'Montserrat', sans-serif;
+            color: $color2;
+            position: absolute;
+        }
+        span{
+            color: $color1;
+        } 
+    }
+    .img-content{
+        color: $color2;
+        font-size: 30px;
+        margin-top: 30px;
+        margin-left: 130px;
+        position: relative;
+        .fa-truck{
+            position: absolute;
+            margin: auto;
+        }
+        .fa-users{
+            position: absolute;
+            margin: auto;
+        }
+        .sale{
+            position: absolute;
+            margin: auto;
+            font-size: 50px;
+            padding: 100px 30px;
+            border-radius: 50%;
+            border: 30px solid $color2;
+        }
+        .free{
+            position: absolute;
+            margin: auto;
+            font-size: 50px;
+            padding: 100px 70px;
+            border-radius: 50%;
+            border: 30px solid $color2;
+        }
+    }
+}
+
+#what-we-do{
+    pos
+    #myVideo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        padding: 50px;
+        border: 10px  ;
+        // height: 30vh;
+      }
+}
+

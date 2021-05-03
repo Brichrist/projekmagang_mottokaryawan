@@ -34,14 +34,14 @@
                  <td> 
                     <select name="level{{$item->id}}" class="form-control" value="{{$item->level}}">
                         @if ($item->level==0)
-                        <option value="0">0</option>
+                        <option value="0">manager</option>
                         @else
                             @if ($item->level==1)
-                            <option selected value="1">1</option>
-                            <option value="2">2</option>
+                            <option selected value="1">admin</option>
+                            <option value="2">guest</option>
                             @else
-                            <option value="1">1</option>
-                            <option selected value="2">2</option>   
+                            <option value="1">admin</option>
+                            <option selected value="2">guest</option>   
                             @endif
                         @endif
                         
