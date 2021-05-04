@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddVotesToTblKaryawanTable extends Migration
+class AddTmpttgllhrToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddVotesToTblKaryawanTable extends Migration
      */
     public function up()
     {
-        Schema::table('tbl_karyawan', function (Blueprint $table) {
-            $table->string('skill')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('tanggal_lahir')->nullable();
+            $table->string('alamat')->nullable();
+
         });
     }
 
@@ -25,7 +27,7 @@ class AddVotesToTblKaryawanTable extends Migration
      */
     public function down()
     {
-        Schema::table('tbl_karyawan', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
