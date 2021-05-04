@@ -15,6 +15,9 @@
 .navbar{
     // border-bottom: 2px solid rgb(0, 0, 0);
     padding-bottom: 0px;
+    position: fixed;
+    width: 100vw;
+    z-index: 100;
     // box-shadow: 0px 5px 15px grey;
     
     .nav-link{

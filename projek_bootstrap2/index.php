@@ -1,0 +1,1 @@
+<?php include_once("sate.html"); ?>
