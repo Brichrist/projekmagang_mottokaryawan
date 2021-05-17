@@ -36,7 +36,8 @@ route::group(['middleware'=>'admin'],function(){
     
     Route::get('/update', [motokaryawan::class,'indexall']);
     Route::get('/update/{id}', [motokaryawan::class,'update']);
-    Route::post('/change/{id}/{skill}', [motokaryawan::class,'change']);
+    // Route::post('/change/{id}/{skill}', [motokaryawan::class,'change']);
+    Route::post('/change/{id}', [motokaryawan::class,'change']);
     Route::get('/delete/{id}', [motokaryawan::class,'delete']);
 
 });
@@ -58,3 +59,6 @@ route::group(['middleware'=>'manager'],function(){
 });
 
 Auth::routes();
+
+Route::get('/insert-ability', [motokaryawan::class,'add_ability']);
+

@@ -14,6 +14,11 @@ class kontenmodel extends Model
     protected $guarded = [];
     public $timestamps = false;
 
+    // public function abilities()
+    // {
+    //     return $this->BelongToMany(ability::Class,'User_abilities');
+    // }
+
 
     // public function datasatusaja($id){
     //     return DB::table('tbl_karyawan')->where('id', $id)->first();

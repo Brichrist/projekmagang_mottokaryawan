@@ -1,7 +1,7 @@
 @extends('master.tmplt')
 @section('foto')
-@foreach($karyawan as $karyawa)
-<span class="d-none d-lg-block"><img class="one img-profile rounded-circle mx-auto mb-3" src="{{url('foto/'.$karyawa->foto)}}" width="200px" height="200px" /></span>
+@foreach($karyawans as $karyawan)
+<span class="d-none d-lg-block"><img class="one img-profile rounded-circle mx-auto mb-3" src="{{url('foto/'.$karyawan->foto)}}" width="200px" height="200px" /></span>
 @endforeach
 @endsection
 @section('konten')
@@ -13,22 +13,24 @@
 @endif
 <section class="resume-section" id="about">
     <div class="resume-section-content">
-      @foreach($karyawan as $karyawa)
+      @foreach($karyawans as $karyawan)
         <h1 class="mb-0">
-            {{$karyawa->nama_depan}}
-            <span class="text-primary">{{$karyawa->nama_belakang}}</span>
+            {{$karyawan->nama_depan}}
+            <span class="text-primary">{{$karyawan->nama_belakang}}</span>
         </h1>
         <div class="subheading mb-3">
-            {{$karyawa->tag_line}}
+            {{$karyawan->tag_line}}
         </div>
-        <p class="lead mb-5">{{$karyawa->description}}</p>
-        <p class="lead mb-5">SKILLS :: {{$karyawa->skill}}</p>
+        <p class="lead mb-5">{{$karyawan->description}}</p>
+        
+        <p class="lead mb-5">SKILLS ::@foreach ($karyawan->abilities as $item) {{$item->skill}}, @endforeach </p>
+        
       @endforeach 
         
         <div class="" style="float: right;"> 
-            {{-- <a href="/content/previous/{{$karyawan->id}}" class="btn btn-outline-danger btn-sm">previous</a>
-            <a href="/content/next/{{$karyawan->id}}" class="btn btn-outline-danger btn-sm">next</a> --}}
-            {{$karyawan->links()}}
+            {{-- <a href="/content/previous/{{$karyawans->id}}" class="btn btn-outline-danger btn-sm">previous</a>
+            <a href="/content/next/{{$karyawans->id}}" class="btn btn-outline-danger btn-sm">next</a> --}}
+            {{$karyawans->links()}}
         </div>
     </div>
 </section>
@@ -37,7 +39,7 @@
 
 
 
-@foreach ($karyawan as $data)
+@foreach ($karyawans as $data)
 <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -47,13 +49,13 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        @foreach($karyawan as $karyawa)
+        @foreach($karyawans as $karyawan)
         <div class="modal-body">
-          apa anda yakin untuk menghapus file ini ({{$karyawa->nama_depan}} {{$karyawa->nama_belakang}}  ) ?
+          apa anda yakin untuk menghapus file ini ({{$karyawan->nama_depan}} {{$karyawan->nama_belakang}}  ) ?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <a href="/delete/{{$karyawa->id}}" class="btn btn-primary">delete</a> 
+          <a href="/delete/{{$karyawan->id}}" class="btn btn-primary">delete</a> 
         </div>
         @endforeach
       </div>

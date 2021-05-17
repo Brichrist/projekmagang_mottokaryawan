@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use App\Models\kontenmodel;
 use App\Models\profilemodel;
 use App\Models\skill;
+use App\Models\ability;
+use App\Models\content;
+use App\Models\UserAbility;
 use Auth;
 use App\Models\User;
 
@@ -19,8 +22,14 @@ class motokaryawan extends Controller
         $this-> middleware('auth');
     }
     public function index(){
-        $karyawan=kontenmodel::simplepaginate(1);
-        return view('contentpage',compact('karyawan'));
+        // $karyawan=kontenmodel::simplepaginate(1);
+        $karyawans=content::simplepaginate(1);
+        $skill_list=ability::get();
+
+
+        // return view('contentpage',compact('karyawan'));
+        return view('contentpage')->with(compact('karyawans','skill_list'));
+
     }
     public function add(){
         
@@ -49,8 +58,11 @@ class motokaryawan extends Controller
             'foto' => $namafoto,
         ];
 
-        kontenmodel::create($file);
-        $karyawan=kontenmodel::paginate(1);
+        // kontenmodel::create($file);
+        // $karyawan=kontenmodel::paginate(1);
+        content::create($file);
+        $karyawan=content::paginate(1);
+
         return redirect()->route('index', ['page' => $karyawan->lastPage()]);
     }
     public function indexall(){
@@ -58,72 +70,77 @@ class motokaryawan extends Controller
         //     'karyawan'=>$this->kontenmodel->alldata(),
         // ];
 
-        $data=kontenmodel::get();
+        // $data=kontenmodel::get();
+        $data=content::get();
+
 
         return view('edit',['karyawan'=>$data]);
     }
-    public function update($id){
-        $karyawan=kontenmodel::findOrFail($id);
-            foreach(explode(',',$karyawan->skill) as $row){
-            $skill[]=$row;
-            };
-            // dd($skill);
-            $skill_list=skill::get();
-        return view('trueedit')->with(compact('karyawan','skill','skill_list'));
-    }
-    public function change($id,$skill,form_request_validation $request){
-        $validated = $request->validated();
-        // request()->validate([
-        //     'nama_depan' => 'required',
-        //     'nama_belakang' => 'required',
-        //     'tag_line' => 'required',
-        //     'description' => 'required',
-        //     'foto' => 'mimes:jpg,jpeg',
-        // ]);
-        if (Request()->foto<>"") {
-            $foto = Request()->foto;
-            $namafoto= Request()->nama_depan.'.'. $foto->extension();
-            $foto->move(public_path('foto'),$namafoto);
+    
+    // public function update($id){
+    //     $karyawan=kontenmodel::findOrFail($id);
+    //         foreach(explode(',',$karyawan->skill) as $row){
+    //         $skill[]=$row;
+    //         };
+    //         // dd($skill);
+    //         $skill_list=skill::get();
+    //     return view('trueedit')->with(compact('karyawan','skill','skill_list'));
+    // }
+    // public function change($id,$skill,form_request_validation $request){
+    //     $validated = $request->validated();
+    //     // request()->validate([
+    //     //     'nama_depan' => 'required',
+    //     //     'nama_belakang' => 'required',
+    //     //     'tag_line' => 'required',
+    //     //     'description' => 'required',
+    //     //     'foto' => 'mimes:jpg,jpeg',
+    //     // ]);
+    //     if (Request()->foto<>"") {
+    //         $foto = Request()->foto;
+    //         $namafoto= Request()->nama_depan.'.'. $foto->extension();
+    //         $foto->move(public_path('foto'),$namafoto);
 
-            $file = [
-                'nama_depan' => Request()->nama_depan,
-                'nama_belakang' => Request()->nama_belakang,
-                'tag_line' => Request()->tag_line,
-                'description' => Request()->description,
-                'foto' => $namafoto,
-                'skill' => $skill,
-            ];
-        }
-        else {
-            $file = [
-                'nama_depan' => Request()->nama_depan,
-                'nama_belakang' => Request()->nama_belakang,
-                'tag_line' => Request()->tag_line,
-                'description' => Request()->description,
-                'skill' => $skill,
-            ];
-        }
+    //         $file = [
+    //             'nama_depan' => Request()->nama_depan,
+    //             'nama_belakang' => Request()->nama_belakang,
+    //             'tag_line' => Request()->tag_line,
+    //             'description' => Request()->description,
+    //             'foto' => $namafoto,
+    //             'skill' => $skill,
+    //         ];
+    //     }
+    //     else {
+    //         $file = [
+    //             'nama_depan' => Request()->nama_depan,
+    //             'nama_belakang' => Request()->nama_belakang,
+    //             'tag_line' => Request()->tag_line,
+    //             'description' => Request()->description,
+    //             'skill' => $skill,
+    //         ];
+    //     }
         
-        // $this->kontenmodel->change($id,$file);
+    //     // $this->kontenmodel->change($id,$file);
         
-        kontenmodel::where('id',$id)->update($file);
-        $b=$id;
-        $a=0;
+    //     kontenmodel::where('id',$id)->update($file);
+    //     $b=$id;
+    //     $a=0;
 
-        $datas=kontenmodel::get();
-        foreach($datas as $data){
-            $a++;
-            if($data->id==$b){
-                break;
-            }
-        }
+    //     $datas=kontenmodel::get();
+    //     foreach($datas as $data){
+    //         $a++;
+    //         if($data->id==$b){
+    //             break;
+    //         }
+    //     }
         
-        return redirect()->route('index', ['page' => $a]);
+    //     return redirect()->route('index', ['page' => $a]);
 
-    }
+    // }
     public function delete($id){ 
        
-        kontenmodel::findOrFail($id)->delete();
+        // kontenmodel::findOrFail($id)->delete();
+        content::findOrFail($id)->delete();
+
  
         return redirect()->route('kontenmaster');
     }
@@ -190,7 +207,7 @@ class motokaryawan extends Controller
         return view('editlevel',compact("account"));
     }
     public function add_skill(){
-        $skills=skill::get();
+        $skills=ability::get();
         return view('addskill',compact("skills"));
     }
     public function insert_skill(request $req){
@@ -199,8 +216,126 @@ class motokaryawan extends Controller
             ['skill' => 'required',]
             ,['skill.required' => 'Harap isi terlebih dahulu']);
         $skill=['skill'=>Request()->skill,];
-        skill::create($skill);
+        ability::create($skill);
         return redirect()->route("addskill");
+    }
+
+
+
+
+
+
+    public function add_ability(){
+        // $skills=[
+        //     ["skill"=>"masak"],
+        //     ["skill"=>"coding"],
+        //     ["skill"=>"mancing"],
+        //     ["skill"=>"menanam"]
+        // ];
+        // ability::insert($skills);
+
+        $content = new content();
+        $content->nama_depan= "a";
+        $content->nama_belakang = "b";
+        $content->tag_line = "tag1";
+        $content->description = "desc1";
+        $content->foto = "brian";
+        $content->save();
+
+        $skillid = [1,2];
+        $content->abilities()->attach($skillid);
+        
+
+
+        return "succes";
+    }
+    public function update($id){
+        $karyawan=content::findOrFail($id);
+            // foreach(explode(',',$karyawan->skill) as $row){
+            // $skill[]=$row;
+            // };
+            // dd($skill);
+            $skill_list=ability::get();
+            // return view('tcopy')->with(compact('karyawan','skill','skill_list'));
+        
+        return view('trueedit')->with(compact('karyawan','skill_list'));
+    }
+    // public function change($id,$skill,form_request_validation $request){
+    public function change($id,form_request_validation $request){
+
+        foreach(explode(',',Request()->skillakhr) as $row){
+            $skillid[]=$row;
+            // dd($skillid);
+        };
+        // return  $skillid ;
+
+        
+
+        $validated = $request->validated();
+        // request()->validate([
+        //     'nama_depan' => 'required',
+        //     'nama_belakang' => 'required',
+        //     'tag_line' => 'required',
+        //     'description' => 'required',
+        //     'foto' => 'mimes:jpg,jpeg',
+        // ]);
+        if (Request()->foto<>"") {
+            $foto = Request()->foto;
+            $namafoto= Request()->nama_depan.'.'. $foto->extension();
+            $foto->move(public_path('foto'),$namafoto);
+
+            $file = [
+                'nama_depan' => Request()->nama_depan,
+                'nama_belakang' => Request()->nama_belakang,
+                'tag_line' => Request()->tag_line,
+                'description' => Request()->description,
+                'foto' => $namafoto,
+                // 'skill' => $skill,
+            ];
+        }
+        else {
+            $file = [
+                'nama_depan' => Request()->nama_depan,
+                'nama_belakang' => Request()->nama_belakang,
+                'tag_line' => Request()->tag_line,
+                'description' => Request()->description,
+                // 'skill' => $skill,
+            ];
+        }
+        
+        // $this->kontenmodel->change($id,$file);
+        // $skillid = [$skill];
+
+        // foreach(explode(',',$skill) as $row){
+        //     $skillid[]=$row;
+        // };
+        // return  $skillid ;
+
+
+        
+        content::where('id',$id)->update($file);
+        // return $skillid;
+        if ($skillid==[""]) {
+            content::findOrFail($id)->Abilities()->detach();
+        }
+        else{
+            content::findOrFail($id)->Abilities()->sync($skillid);
+        }
+        
+
+        $b=$id;
+        $a=0;
+
+        $datas=content::get();
+        foreach($datas as $data){
+            $a++;
+            if($data->id==$b){
+                break;
+            }
+        }
+        
+        return redirect()->route('index', ['page' => $a]);
+
     }
 
 

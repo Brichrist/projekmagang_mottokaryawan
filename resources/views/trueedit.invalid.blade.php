@@ -5,9 +5,7 @@
 @endsection
 
 @section('konten')
-<form action="/change/{{$karyawan->id}}" id="contactsForm" method="post" enctype="multipart/form-data">
-
-{{-- <form action="/change/{{$karyawan->id}}/{{$karyawan->skill}}" id="contactsForm" method="post" enctype="multipart/form-data"> --}}
+<form action="/change/{{$karyawan->id}}/{{$karyawan->skill}}" id="contactsForm" method="post" enctype="multipart/form-data">
 @csrf
     <h1 class="mb-0">
         Tambah
@@ -72,18 +70,14 @@
                 <thead>
                     <tr>
                     <th>Skill</th>
-                    {{-- <th>ID</th> --}}
                     <th></th>
                     </tr>
                 </thead>      
                 <tbody>
-                    @foreach ($karyawan->abilities as $item)
                        <tr>
+                            @foreach ($skill as $item)
                             @if ($item!=null)
-                                <td><div class="L_item" data-id="{{$item->id}}" >{{$item->skill}}</div></td>
-                                {{-- <div class="" data-id="1"> --}}
-                                    {{-- $(".namaclass").data('id'); --}}
-                                {{-- <td><div class="L_item">{{$item->id}}</div></td> --}}
+                                <td><div class="L_item">{{$item}}</div></td>
                                 <td>
                                     <input type="button" value="Delete Row" onclick="SomeDeleteRowFunction(this);">
                                     {{-- <button  class="btn btn-outline-primary">delete</button> --}}
@@ -94,13 +88,10 @@
                 </tbody>
             </table>
           </div>
-          <div class="col-lg-1" style="visibility: hidden">
-            <input type="text" name="skillakhr" id="skillakhr" value="" class="form-control "  >
-          </div>
           <div class="col-sm-3">
             <select class="col" id="select">
                 @foreach ($skill_list as $item)
-                    <option value="{{$item->id}}">{{$item->skill}}</option>
+                    <option value="{{$item->skill}}">{{$item->skill}}</option>
                 @endforeach
             </select>  
           </div>
