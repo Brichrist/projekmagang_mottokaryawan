@@ -126,4 +126,19 @@
     </div>
 
 </form>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    let myText= ($(".skill_item").find(".L_item").map(function() {
+            return $(this).data("id");
+        }).get()).join(",");
+
+        // debugging
+        console.log("texts:", myText);
+        // let searchParams = window.location.href.replace('http://127.0.0.1:8000/update/',''); 
+        // console.log("url:", searchParams);
+        document.getElementById("skillakhr").value=myText;
+        console.log(document.getElementById("skillakhr").value);
+</script>
 @endsection
