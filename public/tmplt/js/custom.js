@@ -11,7 +11,7 @@ $('#new_file').change(function(){
     var file = this.files[0];
     if(file.type != "image/png" && file.type != "image/jpeg" && file.type != "image/gif")
     {
-        alert("Please choose png, jpeg or gif files");
+        alert("Please choose jpg, jpeg, png, gif");
         return false;
     }
     var reader = new FileReader();

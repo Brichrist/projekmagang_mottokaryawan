@@ -77,65 +77,68 @@ class motokaryawan extends Controller
         return view('edit',['karyawan'=>$data]);
     }
     
-    // public function update($id){
-    //     $karyawan=kontenmodel::findOrFail($id);
-    //         foreach(explode(',',$karyawan->skill) as $row){
-    //         $skill[]=$row;
-    //         };
-    //         // dd($skill);
-    //         $skill_list=skill::get();
-    //     return view('trueedit')->with(compact('karyawan','skill','skill_list'));
-    // }
-    // public function change($id,$skill,form_request_validation $request){
-    //     $validated = $request->validated();
-    //     // request()->validate([
-    //     //     'nama_depan' => 'required',
-    //     //     'nama_belakang' => 'required',
-    //     //     'tag_line' => 'required',
-    //     //     'description' => 'required',
-    //     //     'foto' => 'mimes:jpg,jpeg',
-    //     // ]);
-    //     if (Request()->foto<>"") {
-    //         $foto = Request()->foto;
-    //         $namafoto= Request()->nama_depan.'.'. $foto->extension();
-    //         $foto->move(public_path('foto'),$namafoto);
+    public function CommentToCheck(){
+        // public function update($id){
+        //     $karyawan=kontenmodel::findOrFail($id);
+        //         foreach(explode(',',$karyawan->skill) as $row){
+        //         $skill[]=$row;
+        //         };
+        //         // dd($skill);
+        //         $skill_list=skill::get();
+        //     return view('trueedit')->with(compact('karyawan','skill','skill_list'));
+        //  }
+        // public function change($id,$skill,form_request_validation $request){
+        //     $validated = $request->validated();
+        //     // request()->validate([
+        //     //     'nama_depan' => 'required',
+        //     //     'nama_belakang' => 'required',
+        //     //     'tag_line' => 'required',
+        //     //     'description' => 'required',
+        //     //     'foto' => 'mimes:jpg,jpeg',
+        //     // ]);
+        //     if (Request()->foto<>"") {
+        //         $foto = Request()->foto;
+        //         $namafoto= Request()->nama_depan.'.'. $foto->extension();
+        //         $foto->move(public_path('foto'),$namafoto);
 
-    //         $file = [
-    //             'nama_depan' => Request()->nama_depan,
-    //             'nama_belakang' => Request()->nama_belakang,
-    //             'tag_line' => Request()->tag_line,
-    //             'description' => Request()->description,
-    //             'foto' => $namafoto,
-    //             'skill' => $skill,
-    //         ];
-    //     }
-    //     else {
-    //         $file = [
-    //             'nama_depan' => Request()->nama_depan,
-    //             'nama_belakang' => Request()->nama_belakang,
-    //             'tag_line' => Request()->tag_line,
-    //             'description' => Request()->description,
-    //             'skill' => $skill,
-    //         ];
-    //     }
-        
-    //     // $this->kontenmodel->change($id,$file);
-        
-    //     kontenmodel::where('id',$id)->update($file);
-    //     $b=$id;
-    //     $a=0;
+        //         $file = [
+        //             'nama_depan' => Request()->nama_depan,
+        //             'nama_belakang' => Request()->nama_belakang,
+        //             'tag_line' => Request()->tag_line,
+        //             'description' => Request()->description,
+        //             'foto' => $namafoto,
+        //             'skill' => $skill,
+        //         ];
+        //     }
+        //     else {
+        //         $file = [
+        //             'nama_depan' => Request()->nama_depan,
+        //             'nama_belakang' => Request()->nama_belakang,
+        //             'tag_line' => Request()->tag_line,
+        //             'description' => Request()->description,
+        //             'skill' => $skill,
+        //         ];
+        //     }
+            
+        //     // $this->kontenmodel->change($id,$file);
+            
+        //     kontenmodel::where('id',$id)->update($file);
+        //     $b=$id;
+        //     $a=0;
 
-    //     $datas=kontenmodel::get();
-    //     foreach($datas as $data){
-    //         $a++;
-    //         if($data->id==$b){
-    //             break;
-    //         }
-    //     }
-        
-    //     return redirect()->route('index', ['page' => $a]);
+        //     $datas=kontenmodel::get();
+        //     foreach($datas as $data){
+        //         $a++;
+        //         if($data->id==$b){
+        //             break;
+        //         }
+        //     }
+            
+        //     return redirect()->route('index', ['page' => $a]);
 
-    // }
+        // }      
+    }
+    
     public function delete($id){ 
        
         // kontenmodel::findOrFail($id)->delete();
@@ -258,7 +261,7 @@ class motokaryawan extends Controller
             $skill_list=ability::get();
             // return view('tcopy')->with(compact('karyawan','skill','skill_list'));
         
-        return view('trueedit')->with(compact('karyawan','skill_list'));
+        return view('edit')->with(compact('karyawan','skill_list'));
     }
     // public function change($id,$skill,form_request_validation $request){
     public function change($id,form_request_validation $request){

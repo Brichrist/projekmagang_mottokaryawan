@@ -28,7 +28,7 @@ class form_request_validation extends FormRequest
             'nama_belakang' => 'required',
             'tag_line' => 'required',
             'description' => 'required',
-            'foto' => 'mimes:jpg,jpeg',
+            'foto' => 'image',
         ];
     }
     public function messages()
@@ -38,7 +38,7 @@ class form_request_validation extends FormRequest
             'nama_belakang.email.required' => 'harus terisi',
             'tag_line.required' => 'harus terisi',
             'description.required' => 'harus terisi',
-            'foto.mimes:jpg,jpeg' => 'format file yang diizinkan: jpg, jpeg',
+            'foto.mimes:image' => 'format file yang diizinkan: jpg, jpeg',
         ];
     }
 }
